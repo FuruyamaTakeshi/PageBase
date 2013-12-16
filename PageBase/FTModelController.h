@@ -11,6 +11,8 @@
 @class FTDataViewController;
 
 @interface FTModelController : NSObject <UIPageViewControllerDataSource>
+@property (nonatomic) NSUInteger currentPage;
+@property (readonly, strong, nonatomic) NSArray *pageData;
 
 - (FTDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(FTDataViewController *)viewController;

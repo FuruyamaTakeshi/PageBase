@@ -20,7 +20,6 @@
  */
 
 @interface FTModelController()
-@property (readonly, strong, nonatomic) NSArray *pageData;
 @end
 
 @implementation FTModelController

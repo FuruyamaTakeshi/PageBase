@@ -12,7 +12,7 @@
 
 #import "FTDataViewController.h"
 
-@interface FTRootViewController ()
+@interface FTRootViewController () < FTDataViewControllerDelegate>
 @property (readonly, strong, nonatomic) FTModelController *modelController;
 @end
 
@@ -25,10 +25,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
 
     FTDataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
+
+    startingViewController.delegate = self;
+    
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
@@ -65,12 +68,15 @@
 
 #pragma mark - UIPageViewController delegate methods
 
-/*
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
     
 }
- */
+
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    
+}
 
 - (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation
 {
@@ -83,4 +89,15 @@
     return UIPageViewControllerSpineLocationMin;
 }
 
+- (void)dataViewControllerNextButtonDidPush
+{
+    int pageNo = [_modelController indexOfViewController:[self.pageViewController.viewControllers objectAtIndex:0]];
+    if (pageNo == _modelController.pageData.count-1) {
+        return;
+    }
+    FTDataViewController *startingViewController = [self.modelController viewControllerAtIndex:pageNo+1 storyboard:self.storyboard];
+    startingViewController.delegate = self;
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+}
 @end

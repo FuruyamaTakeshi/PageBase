@@ -9,6 +9,7 @@
 #import "FTDataViewController.h"
 
 @interface FTDataViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -30,6 +31,9 @@
 {
     [super viewWillAppear:animated];
     self.dataLabel.text = [self.dataObject description];
+}
+- (IBAction)nextButtonDidPush:(id)sender {
+    [self.delegate dataViewControllerNextButtonDidPush];
 }
 
 @end

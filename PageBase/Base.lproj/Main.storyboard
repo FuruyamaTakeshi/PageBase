@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4478" systemVersion="13A510c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PxF-Ax-wPy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PxF-Ax-wPy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier Data View Controller-->
+        <!--Data View Controller-->
         <scene sceneID="3qM-eY-iJ1">
             <objects>
                 <viewController storyboardIdentifier="FTDataViewController" id="hzS-jB-y9W" customClass="FTDataViewController" sceneMemberID="viewController">
@@ -18,6 +18,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFW-NB-ba9">
                                 <rect key="frame" x="8" y="45" width="304" height="515"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-bw-Z1H">
+                                        <rect key="frame" x="200" y="460" width="32" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextButtonDidPush:" destination="hzS-jB-y9W" eventType="touchUpInside" id="s1x-cR-qoO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="i7n-lc-4In">
@@ -40,13 +52,48 @@
                     </view>
                     <connections>
                         <outlet property="dataLabel" destination="i7n-lc-4In" id="8Kj-KN-eO6"/>
+                        <outlet property="nextButton" destination="hQa-bw-Z1H" id="Byp-zS-d9T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHE-GN-Yf3" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="772" y="476"/>
         </scene>
-        <!--class Prefix:identifier Root View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="v4H-fm-zUF">
+            <objects>
+                <navigationController storyboardIdentifier="ImmovaNavicon" definesPresentationContext="YES" id="q8p-9w-JT3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HWx-Lf-iuz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L3Q-sh-knT" kind="relationship" relationship="rootViewController" id="A8q-RV-a2N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgE-dM-3W3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="1201"/>
+        </scene>
+        <!--Imovables View Controller-->
+        <scene sceneID="fMX-cM-CAg">
+            <objects>
+                <viewController storyboardIdentifier="ImovablesViewController" id="L3Q-sh-knT" customClass="ImovablesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Ug-Vv-6fU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ro5-ik-OdV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RwX-Nm-kIe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o7r-JY-HpQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5LO-r7-ZyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165" y="1201"/>
+        </scene>
+        <!--Root View Controller-->
         <scene sceneID="3GU-QQ-JyJ">
             <objects>
                 <viewController id="PxF-Ax-wPy" customClass="FTRootViewController" sceneMemberID="viewController">

@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol FTDataViewControllerDelegate
+- (void)dataViewControllerNextButtonDidPush;
+@end
 
 @interface FTDataViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *dataLabel;
 @property (strong, nonatomic) id dataObject;
+@property (nonatomic) id <FTDataViewControllerDelegate> delegate;
 
 @end

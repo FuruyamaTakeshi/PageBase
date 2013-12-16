@@ -13,8 +13,9 @@
 @interface FTModelController : NSObject <UIPageViewControllerDataSource>
 @property (nonatomic) NSUInteger currentPage;
 @property (readonly, strong, nonatomic) NSArray *pageData;
+- (UINavigationController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 
-- (FTDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
-- (NSUInteger)indexOfViewController:(FTDataViewController *)viewController;
+//- (FTDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
+- (NSUInteger)indexOfViewController:(UINavigationController *)viewController;
 
 @end

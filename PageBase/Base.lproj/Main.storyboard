@@ -20,13 +20,23 @@
                                 <rect key="frame" x="8" y="45" width="304" height="515"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-bw-Z1H">
-                                        <rect key="frame" x="200" y="460" width="32" height="30"/>
+                                        <rect key="frame" x="238" y="460" width="32" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Next">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="nextButtonDidPush:" destination="hzS-jB-y9W" eventType="touchUpInside" id="s1x-cR-qoO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cG-2e-e3o">
+                                        <rect key="frame" x="38" y="460" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="L3Q-sh-knT" kind="push" id="fJH-lu-GRQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -50,6 +60,7 @@
                             <constraint firstItem="i7n-lc-4In" firstAttribute="trailing" secondItem="wFW-NB-ba9" secondAttribute="trailing" id="zIS-yv-SWb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tEr-AR-fGR"/>
                     <connections>
                         <outlet property="dataLabel" destination="i7n-lc-4In" id="8Kj-KN-eO6"/>
                         <outlet property="nextButton" destination="hQa-bw-Z1H" id="Byp-zS-d9T"/>
@@ -57,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHE-GN-Yf3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="476"/>
+            <point key="canvasLocation" x="1296" y="481"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4H-fm-zUF">
@@ -67,12 +78,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="L3Q-sh-knT" kind="relationship" relationship="rootViewController" id="A8q-RV-a2N"/>
+                        <segue destination="hzS-jB-y9W" kind="relationship" relationship="rootViewController" id="E4D-tV-3Bf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgE-dM-3W3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="1201"/>
+            <point key="canvasLocation" x="783" y="476"/>
         </scene>
         <!--Imovables View Controller-->
         <scene sceneID="fMX-cM-CAg">
@@ -91,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5LO-r7-ZyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1165" y="1201"/>
+            <point key="canvasLocation" x="1860" y="476"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="3GU-QQ-JyJ">

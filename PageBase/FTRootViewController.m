@@ -28,12 +28,11 @@
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
 
-    FTDataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
-
-    startingViewController.delegate = self;
-    
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    UINavigationController *naviCon = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
+    FTDataViewController *controller = naviCon.viewControllers[0];
+    controller.delegate = self;
+    NSArray *viewControllers = @[naviCon];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 
     self.pageViewController.dataSource = self.modelController;
 
@@ -95,8 +94,10 @@
     if (pageNo == _modelController.pageData.count-1) {
         return;
     }
-    FTDataViewController *startingViewController = [self.modelController viewControllerAtIndex:pageNo+1 storyboard:self.storyboard];
-    startingViewController.delegate = self;
+    UINavigationController *startingViewController = [self.modelController viewControllerAtIndex:pageNo+1 storyboard:self.storyboard];
+    FTDataViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FTDataViewController"];
+    controller.delegate = self;
+    [startingViewController setViewControllers:@[controller]];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }

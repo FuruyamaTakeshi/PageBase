@@ -35,7 +35,7 @@
     return self;
 }
 
-- (FTDataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard
+- (UINavigationController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard
 {   
     // Return the data view controller for the given index.
     if (([self.pageData count] == 0) || (index >= [self.pageData count])) {
@@ -43,23 +43,30 @@
     }
     
     // Create a new view controller and pass suitable data.
+    UINavigationController *navicon = [storyboard instantiateViewControllerWithIdentifier:@"ImmovaNavicon"];
     FTDataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"FTDataViewController"];
     dataViewController.dataObject = self.pageData[index];
-    return dataViewController;
+
+    NSArray *viewControllers = @[dataViewController];
+    [navicon setViewControllers:viewControllers];
+    return navicon;
 }
 
-- (NSUInteger)indexOfViewController:(FTDataViewController *)viewController
+- (NSUInteger)indexOfViewController:(UINavigationController *)viewController
 {   
      // Return the index of the given data view controller.
      // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    return [self.pageData indexOfObject:viewController.dataObject];
+    
+    UINavigationController *naviCon = viewController;
+    FTDataViewController *controller = naviCon.viewControllers[0];
+    return [self.pageData indexOfObject:controller.dataObject];
 }
 
 #pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(FTDataViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(UINavigationController *)viewController];
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
@@ -70,7 +77,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(FTDataViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(UINavigationController *)viewController];
     if (index == NSNotFound) {
         return nil;
     }

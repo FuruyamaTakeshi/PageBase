@@ -19,6 +19,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 128, 128)];
+    label.center = self.view.center;
+    label.text = [NSString stringWithFormat:@"%@", [self description]];
+    label.numberOfLines = 0;
+    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning

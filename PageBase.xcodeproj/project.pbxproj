@@ -23,6 +23,7 @@
 		A437935E185B1E3C005ED9A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A437933A185B1E3C005ED9A1 /* UIKit.framework */; };
 		A4379366185B1E3C005ED9A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4379364185B1E3C005ED9A1 /* InfoPlist.strings */; };
 		A4379368185B1E3C005ED9A1 /* PageBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4379367185B1E3C005ED9A1 /* PageBaseTests.m */; };
+		A49EFCE9185F1F66004DE4DE /* ImovablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49EFCE8185F1F66004DE4DE /* ImovablesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		A4379363185B1E3C005ED9A1 /* PageBaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageBaseTests-Info.plist"; sourceTree = "<group>"; };
 		A4379365185B1E3C005ED9A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4379367185B1E3C005ED9A1 /* PageBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageBaseTests.m; sourceTree = "<group>"; };
+		A49EFCE7185F1F66004DE4DE /* ImovablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImovablesViewController.h; sourceTree = "<group>"; };
+		A49EFCE8185F1F66004DE4DE /* ImovablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImovablesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				A437934C185B1E3C005ED9A1 /* FTDataViewController.m */,
 				A437934E185B1E3C005ED9A1 /* FTModelController.h */,
 				A437934F185B1E3C005ED9A1 /* FTModelController.m */,
+				A49EFCE7185F1F66004DE4DE /* ImovablesViewController.h */,
+				A49EFCE8185F1F66004DE4DE /* ImovablesViewController.m */,
 				A4379351185B1E3C005ED9A1 /* Main.storyboard */,
 				A4379354185B1E3C005ED9A1 /* Images.xcassets */,
 				A437933D185B1E3C005ED9A1 /* Supporting Files */,
@@ -265,6 +270,7 @@
 				A4379350185B1E3C005ED9A1 /* FTModelController.m in Sources */,
 				A4379343185B1E3C005ED9A1 /* main.m in Sources */,
 				A437934A185B1E3C005ED9A1 /* FTRootViewController.m in Sources */,
+				A49EFCE9185F1F66004DE4DE /* ImovablesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +479,7 @@
 				A437936D185B1E3C005ED9A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A437936E185B1E3C005ED9A1 /* Build configuration list for PBXNativeTarget "PageBaseTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +488,7 @@
 				A4379370185B1E3C005ED9A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
